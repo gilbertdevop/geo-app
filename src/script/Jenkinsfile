@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    tools{
+        maven 'M2_HOME'
+    }
+    stage{
+        stage("maven"){
+            steps{
+                sh 'mvn clean validate ompile install test package'
+            }
+        }
+    }
+}
+
